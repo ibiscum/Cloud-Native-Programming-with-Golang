@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/persistence/dblayer"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter06/lib/persistence/dblayer"
 )
 
 var (
