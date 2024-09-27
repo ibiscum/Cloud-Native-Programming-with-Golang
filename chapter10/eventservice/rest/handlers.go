@@ -4,13 +4,14 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
-	"github.com/gorilla/mux"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/contracts"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/persistence"
 	"net/http"
 	"strings"
 	"time"
+
+	"github.com/gorilla/mux"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter10/contracts"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter10/lib/msgqueue"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter10/lib/persistence"
 )
 
 type eventServiceHandler struct {

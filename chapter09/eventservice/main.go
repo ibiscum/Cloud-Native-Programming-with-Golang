@@ -6,12 +6,12 @@ import (
 
 	"github.com/IBM/sarama"
 
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/eventservice/rest"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/configuration"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue"
-	msgqueue_amqp "github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue/amqp"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue/kafka"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/persistence/dblayer"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter09/eventservice/rest"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter09/lib/configuration"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter09/lib/msgqueue"
+	msgqueue_amqp "github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter09/lib/msgqueue/amqp"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter09/lib/msgqueue/kafka"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter09/lib/persistence/dblayer"
 	"github.com/streadway/amqp"
 )
 

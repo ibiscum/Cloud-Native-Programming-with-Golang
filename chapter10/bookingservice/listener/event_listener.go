@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/contracts"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/persistence"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter10/contracts"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter10/lib/msgqueue"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter10/lib/persistence"
 	"gopkg.in/mgo.v2/bson"
 )
 

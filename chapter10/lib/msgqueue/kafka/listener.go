@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/IBM/sarama"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/helper/kafka"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter10/lib/helper/kafka"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter10/lib/msgqueue"
 )
 
 type kafkaEventListener struct {

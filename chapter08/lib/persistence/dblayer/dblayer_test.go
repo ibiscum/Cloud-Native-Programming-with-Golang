@@ -6,7 +6,7 @@ import (
 
 	"gopkg.in/mgo.v2/bson"
 
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter10/lib/persistence"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter06/lib/persistence"
 )
 
 func TestExamineDatabaseCalls(t *testing.T) {

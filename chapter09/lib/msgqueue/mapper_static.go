@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/contracts"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter09/contracts"
 	"github.com/mitchellh/mapstructure"
 )
 

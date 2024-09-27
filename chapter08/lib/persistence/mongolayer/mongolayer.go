@@ -1,7 +1,7 @@
 package mongolayer
 
 import (
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter10/lib/persistence"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter06/lib/persistence"
 	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )

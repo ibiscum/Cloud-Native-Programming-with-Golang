@@ -7,7 +7,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter03/myevents/src/lib/persistence"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter08/lib/persistence"
 )
 
 const (
@@ -16,6 +16,41 @@ const (
 
 type DynamoDBLayer struct {
 	service *dynamodb.DynamoDB
+}
+
+// AddBookingForUser implements persistence.DatabaseHandler.
+func (dynamoLayer *DynamoDBLayer) AddBookingForUser([]byte, persistence.Booking) error {
+	panic("unimplemented")
+}
+
+// AddLocation implements persistence.DatabaseHandler.
+func (dynamoLayer *DynamoDBLayer) AddLocation(persistence.Location) (persistence.Location, error) {
+	panic("unimplemented")
+}
+
+// AddUser implements persistence.DatabaseHandler.
+func (dynamoLayer *DynamoDBLayer) AddUser(persistence.User) ([]byte, error) {
+	panic("unimplemented")
+}
+
+// FindAllLocations implements persistence.DatabaseHandler.
+func (dynamoLayer *DynamoDBLayer) FindAllLocations() ([]persistence.Location, error) {
+	panic("unimplemented")
+}
+
+// FindBookingsForUser implements persistence.DatabaseHandler.
+func (dynamoLayer *DynamoDBLayer) FindBookingsForUser([]byte) ([]persistence.Booking, error) {
+	panic("unimplemented")
+}
+
+// FindLocation implements persistence.DatabaseHandler.
+func (dynamoLayer *DynamoDBLayer) FindLocation(string) (persistence.Location, error) {
+	panic("unimplemented")
+}
+
+// FindUser implements persistence.DatabaseHandler.
+func (dynamoLayer *DynamoDBLayer) FindUser(string, string) (persistence.User, error) {
+	panic("unimplemented")
 }
 
 func NewDynamoDBLayerByRegion(region string) (persistence.DatabaseHandler, error) {
