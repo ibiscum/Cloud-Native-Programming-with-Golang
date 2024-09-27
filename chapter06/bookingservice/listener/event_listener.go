@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/martin-helmich/cloudnativego-backend/src/contracts"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/msgqueue"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/persistence"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/contracts"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/persistence"
 	"gopkg.in/mgo.v2/bson"
 )
 

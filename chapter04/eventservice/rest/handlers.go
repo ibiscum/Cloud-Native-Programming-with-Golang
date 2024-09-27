@@ -9,9 +9,9 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/martin-helmich/cloudnativego-backend/src/contracts"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/msgqueue"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/persistence"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter04/contracts"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter04/lib/msgqueue"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter04/lib/persistence"
 )
 
 type eventServiceHandler struct {

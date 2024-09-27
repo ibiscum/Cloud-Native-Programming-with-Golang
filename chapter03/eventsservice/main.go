@@ -4,9 +4,9 @@ import (
 	"flag"
 	"log"
 
-	"github.com/ibiscum/Cloud-Native-programming-with-Golang/chapter03/myevents/src/eventsservice/rest"
-	"github.com/ibiscum/Cloud-Native-programming-with-Golang/chapter03/myevents/src/lib/configuration"
-	"github.com/ibiscum/Cloud-Native-programming-with-Golang/chapter03/myevents/src/lib/persistence/dblayer"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter03/eventsservice/rest"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter03/lib/configuration"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter03/lib/persistence/dblayer"
 )
 
 func main() {

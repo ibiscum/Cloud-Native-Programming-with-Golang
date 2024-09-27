@@ -7,7 +7,7 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/sqs"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/msgqueue"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue"
 )
 
 type SQSEmitter struct {

@@ -1,6 +1,6 @@
 package contracts
 
-import "github.com/martin-helmich/cloudnativego-backend/src/lib/persistence"
+import "github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/persistence"
 
 // LocationCreatedEvent is emitted whenever a location is created
 type LocationCreatedEvent struct {

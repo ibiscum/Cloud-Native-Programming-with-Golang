@@ -3,11 +3,11 @@ package dynamolayer
 import (
 	"errors"
 
-	"github.com/ibiscum/Cloud-Native-programming-with-Golang/chapter03/myevents/src/lib/persistence"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter03/myevents/src/lib/persistence"
 )
 
 const (

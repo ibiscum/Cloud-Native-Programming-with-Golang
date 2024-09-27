@@ -8,9 +8,9 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/martin-helmich/cloudnativego-backend/src/contracts"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/msgqueue"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/persistence"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/contracts"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/persistence"
 )
 
 type eventRef struct {

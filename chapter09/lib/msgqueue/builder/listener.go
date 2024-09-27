@@ -5,9 +5,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/msgqueue"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/msgqueue/amqp"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/msgqueue/kafka"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue/amqp"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue/kafka"
 )
 
 func NewEventListenerFromEnvironment() (msgqueue.EventListener, error) {

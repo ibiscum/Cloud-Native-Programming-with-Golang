@@ -6,14 +6,14 @@ import (
 
 	"net/http"
 
-	"github.com/Shopify/sarama"
+	"github.com/IBM/sarama"
 
-	"github.com/martin-helmich/cloudnativego-backend/src/eventservice/rest"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/configuration"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/msgqueue"
-	msgqueue_amqp "github.com/martin-helmich/cloudnativego-backend/src/lib/msgqueue/amqp"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/msgqueue/kafka"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/persistence/dblayer"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/eventservice/rest"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/configuration"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue"
+	msgqueue_amqp "github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue/amqp"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue/kafka"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/persistence/dblayer"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/streadway/amqp"
 )

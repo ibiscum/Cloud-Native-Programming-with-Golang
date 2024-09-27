@@ -87,7 +87,7 @@ imports:
   - xfs
 - name: github.com/rcrowley/go-metrics
   version: 1f30fe9094a513ce4c700b9a54458bbb0c96996c
-- name: github.com/Shopify/sarama
+- name: github.com/IBM/sarama
   version: 0fb560e5f7fbcaee2f75e3c34174320709f69944
 - name: github.com/streadway/amqp
   version: afe8eee29a74d213b1f3fb2586058157c397da60

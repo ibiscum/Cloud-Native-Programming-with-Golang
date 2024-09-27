@@ -1,9 +1,10 @@
 package kafka
 
 import (
-	"github.com/Shopify/sarama"
 	"log"
 	"time"
+
+	"github.com/IBM/sarama"
 )
 
 // RetryConnect implements a retry mechanism for establishing the Kafka connection.

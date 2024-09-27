@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Shopify/sarama"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/helper/kafka"
-	"github.com/martin-helmich/cloudnativego-backend/src/lib/msgqueue"
+	"github.com/IBM/sarama"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter04/lib/helper/kafka"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter04/lib/msgqueue"
 )
 
 type kafkaEventEmitter struct {
