@@ -8,20 +8,20 @@ Cloud computing and microservices are two very important concepts in modern soft
 ### Instructions and Navigations
 All of the codes are organized as per the chapters, each folder has the codes related to that chapter or appendix. Some parts of the code are dependant on the [frontend](https://github.com/martin-helmich/cloudnativego-frontend) and [backend](https://github.com/martin-helmich/cloudnativego-backend) repository.                  
 
-For example: Cloud-Native-programming-with-Golang/Chapter04/src/bookingservice/main.go
+For example: Cloud-Native-programming-with-Golang/chapter04/bookingservice/main.go
 The code will look like the following:
 ```
 import (
 	"flag"
 
 	"github.com/IBM/sarama"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/bookingservice/listener"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/bookingservice/rest"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/configuration"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue"
-	msgqueue_amqp "github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue/amqp"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/msgqueue/kafka"
-	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/src/lib/persistence/dblayer"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter04/bookingservice/listener"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter04/bookingservice/rest"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter04/lib/configuration"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter04/lib/msgqueue"
+	msgqueue_amqp "github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter04/lib/msgqueue/amqp"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter04/lib/msgqueue/kafka"
+	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter04/lib/persistence/dblayer"
 	"github.com/streadway/amqp"
 )
 ```
