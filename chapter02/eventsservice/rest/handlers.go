@@ -4,6 +4,7 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"strings"
 
@@ -49,8 +50,13 @@ func (eh *eventServiceHandler) FindEventHandler(w http.ResponseWriter, r *http.R
 		event, err = eh.dbhandler.FindEventByName(searchkey)
 	case "id":
 		id, err := hex.DecodeString(searchkey)
-		if err == nil {
-			event, err = eh.dbhandler.FindEvent(id)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		event, err = eh.dbhandler.FindEvent(id)
+		if err != nil {
+			log.Fatal(err)
 		}
 	}
 	if err != nil {

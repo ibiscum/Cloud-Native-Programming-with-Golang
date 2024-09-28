@@ -1,6 +1,7 @@
 package rest
 
 import (
+	"log"
 	"net/http"
 	"time"
 
@@ -21,5 +22,8 @@ func ServeAPI(listenAddr string, database persistence.DatabaseHandler, eventEmit
 		ReadTimeout:  1 * time.Second,
 	}
 
-	srv.ListenAndServe()
+	err := srv.ListenAndServe()
+	if err != nil {
+		log.Fatal(err)
+	}
 }

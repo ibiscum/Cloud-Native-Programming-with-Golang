@@ -4,6 +4,7 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"strings"
 	"time"
@@ -49,10 +50,16 @@ func (eh *eventServiceHandler) findEventHandler(w http.ResponseWriter, r *http.R
 		event, err = eh.dbhandler.FindEventByName(searchkey)
 	case "id":
 		id, err := hex.DecodeString(searchkey)
-		if nil == err {
-			event, err = eh.dbhandler.FindEvent(id)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		event, err = eh.dbhandler.FindEvent(id)
+		if err != nil {
+			log.Fatal(err)
 		}
 	}
+
 	if err != nil {
 		w.WriteHeader(404)
 		fmt.Fprintf(w, "Error occured %s", err)
@@ -120,7 +127,10 @@ func (eh *eventServiceHandler) newEventHandler(w http.ResponseWriter, r *http.Re
 		End:        time.Unix(event.EndDate, 0),
 		LocationID: string(event.Location.ID),
 	}
-	eh.eventEmitter.Emit(&msg)
+	err = eh.eventEmitter.Emit(&msg)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	w.Header().Set("Content-Type", "application/json;charset=utf8")
 
@@ -161,7 +171,10 @@ func (eh *eventServiceHandler) newLocationHandler(w http.ResponseWriter, r *http
 		Country: persistedLocation.Country,
 		Halls:   persistedLocation.Halls,
 	}
-	eh.eventEmitter.Emit(&msg)
+	err = eh.eventEmitter.Emit(&msg)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	w.Header().Set("Content-Type", "application/json;charset=utf8")
 

@@ -45,7 +45,10 @@ func (p *EventProcessor) handleEvent(event msgqueue.Event) {
 			return
 		}
 
-		p.Database.AddEvent(persistence.Event{ID: bson.ObjectIdHex(e.ID), Name: e.Name})
+		_, err := p.Database.AddEvent(persistence.Event{ID: bson.ObjectIdHex(e.ID), Name: e.Name})
+		if err != nil {
+			log.Fatal(err)
+		}
 	case *contracts.LocationCreatedEvent:
 		log.Printf("location %s created: %v", e.ID, e)
 		// TODO: No persistence for locations, yet

@@ -4,7 +4,6 @@ go 1.23.0
 
 require (
 	github.com/gorilla/mux v1.8.1
-	github.com/martin-helmich/cloudnativego-backend v0.0.0-20171222210257-6148b3bb66f2
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 )
 
@@ -26,6 +25,7 @@ require (
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/klauspost/compress v1.17.10 // indirect
+	github.com/kr/text v0.2.0 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/pierrec/lz4/v4 v4.1.21 // indirect
 	github.com/prometheus/client_model v0.6.1 // indirect
@@ -42,8 +42,8 @@ require (
 	github.com/IBM/sarama v1.43.3
 	github.com/aws/aws-sdk-go v1.55.5
 	github.com/felixge/httpsnoop v1.0.4 // indirect
-	github.com/gorilla/handlers v1.5.2 // indirect
-	github.com/mitchellh/mapstructure v1.5.0 // indirect
+	github.com/gorilla/handlers v1.5.2
+	github.com/mitchellh/mapstructure v1.5.0
 	github.com/prometheus/client_golang v1.20.4
 	github.com/streadway/amqp v1.1.0
 )

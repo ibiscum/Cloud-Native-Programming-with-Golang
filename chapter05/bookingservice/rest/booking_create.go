@@ -13,19 +13,19 @@ import (
 	"github.com/ibiscum/Cloud-Native-Programming-with-Golang/chapter05/lib/persistence"
 )
 
-type eventRef struct {
-	ID   string `json:"id"`
-	Name string `json:"name,omitempty"`
-}
+// type eventRef struct {
+// 	ID   string `json:"id"`
+// 	Name string `json:"name,omitempty"`
+// }
 
 type createBookingRequest struct {
 	Seats int `json:"seats"`
 }
 
-type createBookingResponse struct {
-	ID    string   `json:"id"`
-	Event eventRef `json:"event"`
-}
+// type createBookingResponse struct {
+// 	ID    string   `json:"id"`
+// 	Event eventRef `json:"event"`
+// }
 
 type CreateBookingHandler struct {
 	eventEmitter msgqueue.EventEmitter

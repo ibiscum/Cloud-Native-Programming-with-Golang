@@ -43,7 +43,7 @@ func (sqsEmit *SQSEmitter) Emit(event msgqueue.Event) error {
 	}
 	_, err = sqsEmit.sqsSvc.SendMessage(&sqs.SendMessageInput{
 		MessageAttributes: map[string]*sqs.MessageAttributeValue{
-			"event_name": &sqs.MessageAttributeValue{
+			"event_name": {
 				DataType:    aws.String("string"),
 				StringValue: aws.String(event.EventName()),
 			},

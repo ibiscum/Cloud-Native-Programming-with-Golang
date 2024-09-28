@@ -57,7 +57,7 @@ func main() {
 
 	dbhandler, _ := dblayer.NewPersistenceLayer(config.Databasetype, config.DBConnection)
 
-	processor := listener.EventProcessor{eventListener, dbhandler}
+	processor := listener.EventProcessor{EventListener: eventListener, Database: dbhandler}
 	go processor.ProcessEvents()
 
 	rest.ServeAPI(config.RestfulEndpoint, dbhandler, eventEmitter)

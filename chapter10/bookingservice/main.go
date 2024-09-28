@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/IBM/sarama"
@@ -60,7 +61,7 @@ func main() {
 
 	dbhandler, _ := dblayer.NewPersistenceLayer(config.Databasetype, config.DBConnection)
 
-	processor := listener.EventProcessor{eventListener, dbhandler}
+	processor := listener.EventProcessor{EventListener: eventListener, Database: dbhandler}
 	go processor.ProcessEvents()
 
 	go func() {
@@ -68,7 +69,10 @@ func main() {
 		h := http.NewServeMux()
 		h.Handle("/metrics", promhttp.Handler())
 
-		http.ListenAndServe(":9100", h)
+		err := http.ListenAndServe(":9100", h)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}()
 
 	rest.ServeAPI(config.RestfulEndpoint, dbhandler, eventEmitter)

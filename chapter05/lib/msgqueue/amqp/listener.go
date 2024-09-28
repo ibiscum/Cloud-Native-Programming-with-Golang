@@ -2,6 +2,7 @@ package amqp
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"time"
 
@@ -135,12 +136,18 @@ func (l *amqpEventListener) Listen(eventNames ...string) (<-chan msgqueue.Event,
 			event, err := l.mapper.MapEvent(eventName, msg.Body)
 			if err != nil {
 				errors <- fmt.Errorf("could not unmarshal event %s: %s", eventName, err)
-				msg.Nack(false, false)
+				err = msg.Nack(false, false)
+				if err != nil {
+					log.Print(err)
+				}
 				continue
 			}
 
 			events <- event
-			msg.Ack(false)
+			err = msg.Ack(false)
+			if err != nil {
+				log.Fatal(err)
+			}
 		}
 	}()
 

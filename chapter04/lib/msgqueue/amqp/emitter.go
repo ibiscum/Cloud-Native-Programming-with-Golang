@@ -14,13 +14,13 @@ import (
 type amqpEventEmitter struct {
 	connection *amqp.Connection
 	exchange   string
-	events     chan *emittedEvent
+	// events     chan *emittedEvent
 }
 
-type emittedEvent struct {
-	event     msgqueue.Event
-	errorChan chan error
-}
+// type emittedEvent struct {
+// 	event     msgqueue.Event
+// 	errorChan chan error
+// }
 
 // NewAMQPEventEmitterFromEnvironment will create a new event emitter from
 // the configured environment variables. Important variables are:

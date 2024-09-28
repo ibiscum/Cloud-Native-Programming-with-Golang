@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 
 	"net/http"
 
@@ -61,7 +62,10 @@ func main() {
 		h := http.NewServeMux()
 		h.Handle("/metrics", promhttp.Handler())
 
-		http.ListenAndServe(":9100", h)
+		err := http.ListenAndServe(":9100", h)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}()
 
 	fmt.Println("Serving API")

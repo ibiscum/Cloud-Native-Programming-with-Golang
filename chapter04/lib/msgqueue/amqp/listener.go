@@ -2,6 +2,7 @@ package amqp
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"time"
 
@@ -140,7 +141,10 @@ func (l *amqpEventListener) Listen(eventNames ...string) (<-chan msgqueue.Event,
 			}
 
 			events <- event
-			msg.Ack(false)
+			err = msg.Ack(false)
+			if err != nil {
+				log.Fatal(err)
+			}
 		}
 	}()
 

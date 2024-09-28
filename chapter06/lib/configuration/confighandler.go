@@ -2,6 +2,7 @@ package configuration
 
 import (
 	"encoding/json"
+	"log"
 	"os"
 
 	"fmt"
@@ -44,7 +45,10 @@ func ExtractConfiguration(filename string) (ServiceConfig, error) {
 		// return conf, err
 	}
 
-	json.NewDecoder(file).Decode(&conf)
+	err = json.NewDecoder(file).Decode(&conf)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	if v := os.Getenv("LISTEN_URL"); v != "" {
 		conf.RestfulEndpoint = v
