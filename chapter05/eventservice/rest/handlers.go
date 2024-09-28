@@ -102,7 +102,10 @@ func (eh *eventServiceHandler) oneEventHandler(w http.ResponseWriter, r *http.Re
 	}
 
 	w.Header().Set("Content-Type", "application/json; charset=utf8")
-	json.NewEncoder(w).Encode(&event)
+	err = json.NewEncoder(w).Encode(&event)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func (eh *eventServiceHandler) newEventHandler(w http.ResponseWriter, r *http.Request) {

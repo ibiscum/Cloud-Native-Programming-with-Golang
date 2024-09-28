@@ -4,6 +4,7 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"time"
 
@@ -74,7 +75,10 @@ func (h *CreateBookingHandler) ServeHTTP(w http.ResponseWriter, r *http.Request)
 		EventID: event.ID.Hex(),
 		UserID:  "someUserID",
 	}
-	h.eventEmitter.Emit(&msg)
+	err = h.eventEmitter.Emit(&msg)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	bookingCount.
 		WithLabelValues(eventID, event.Name).
@@ -82,7 +86,10 @@ func (h *CreateBookingHandler) ServeHTTP(w http.ResponseWriter, r *http.Request)
 	seatsPerBooking.
 		Observe(float64(bookingRequest.Seats))
 
-	h.database.AddBookingForUser([]byte("someUserID"), booking)
+	err = h.database.AddBookingForUser([]byte("someUserID"), booking)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(201)
