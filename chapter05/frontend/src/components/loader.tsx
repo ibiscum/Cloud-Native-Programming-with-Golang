@@ -3,6 +3,7 @@ import * as React from "react";
 export interface LoaderProps {
     loading: boolean;
     message?: string;
+    children: React.ReactNode
 }
 
 export class Loader extends React.Component<LoaderProps, {}> {

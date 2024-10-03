@@ -1,7 +1,6 @@
 package rest
 
 import (
-	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -34,7 +33,7 @@ func (eh *eventServiceHandler) FindEventHandler(w http.ResponseWriter, r *http.R
 		return
 	}
 
-	searchkey, ok := vars["search"]
+	// searchkey, ok := vars["search"]
 	if !ok {
 		w.WriteHeader(400)
 		fmt.Fprint(w, `{"error": "No search keys found, you can either search
@@ -47,14 +46,14 @@ func (eh *eventServiceHandler) FindEventHandler(w http.ResponseWriter, r *http.R
 	var err error
 	switch strings.ToLower(criteria) {
 	case "name":
-		event, err = eh.dbhandler.FindEventByName(searchkey)
+		//event, err = eh.dbhandler.FindEventByName(searchkey)
 	case "id":
-		id, err := hex.DecodeString(searchkey)
+		//id, err := hex.DecodeString(searchkey)
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		event, err = eh.dbhandler.FindEvent(id)
+		//event, err = eh.dbhandler.FindEvent(id)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -68,33 +67,35 @@ func (eh *eventServiceHandler) FindEventHandler(w http.ResponseWriter, r *http.R
 }
 
 func (eh *eventServiceHandler) AllEventHandler(w http.ResponseWriter, r *http.Request) {
-	events, err := eh.dbhandler.FindAllAvailableEvents()
-	if err != nil {
-		w.WriteHeader(500)
-		fmt.Fprintf(w, `{"error": "Error occured while trying to find all available events %s"}`, err)
-		return
-	}
-	w.Header().Set("Content-Type", "application/json;charset=utf8")
-	err = json.NewEncoder(w).Encode(&events)
-	if err != nil {
-		w.WriteHeader(500)
-		fmt.Fprintf(w, `{"error": "Error occured while trying encode events to JSON %s"}`, err)
-	}
+	// events, err := eh.dbhandler.FindAllAvailableEvents()
+	// if err != nil {
+	// 	w.WriteHeader(500)
+	// 	fmt.Fprintf(w, `{"error": "Error occured while trying to find all available events %s"}`, err)
+	// 	return
+	// }
+	// w.Header().Set("Content-Type", "application/json;charset=utf8")
+	// err = json.NewEncoder(w).Encode(&events)
+	// if err != nil {
+	// 	w.WriteHeader(500)
+	// 	fmt.Fprintf(w, `{"error": "Error occured while trying encode events to JSON %s"}`, err)
+	// }
 }
 
 func (eh *eventServiceHandler) NewEventHandler(w http.ResponseWriter, r *http.Request) {
 	event := persistence.Event{}
 	err := json.NewDecoder(r.Body).Decode(&event)
-	if nil != err {
+	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, `{"error": "error occured while decoding event data %s"}`, err)
 		return
 	}
+
 	id, err := eh.dbhandler.AddEvent(event)
-	if nil != err {
+	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, `{"error": "error occured while persisting event %d %s"}`, id, err)
 		return
 	}
+
 	fmt.Fprintf(w, `{"id":%d}`, id)
 }

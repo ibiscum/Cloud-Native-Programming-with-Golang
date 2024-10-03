@@ -10,7 +10,7 @@ import (
 
 var (
 	DBTypeDefault       = dblayer.DBTYPE("mongodb")
-	DBConnectionDefault = "mongodb://127.0.0.1"
+	DBConnectionDefault = "mongodb://0.0.0.0:27017"
 	RestfulEPDefault    = "localhost:8181"
 )
 

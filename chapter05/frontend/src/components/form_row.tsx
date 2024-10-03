@@ -2,6 +2,7 @@ import * as React from "react";
 
 export interface FormRowProps {
     label?: string;
+    children: React.ReactNode
 }
 
 export class FormRow extends React.Component<FormRowProps, {}> {

@@ -18,8 +18,8 @@ class App extends React.Component<{}, {}> {
                 <div className="container">
                     <h1>My Events</h1>
 
-                    <Route exact path="/" component={eventList}/>
-                    <Route path="/events/:id/book" component={eventBooking}/>
+                    <Route path="/" Component={eventList}/>
+                    <Route path="/events/:id/book" Component={eventBooking}/>
                 </div>
             </div>
         </Router>
