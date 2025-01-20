@@ -47,7 +47,7 @@ require (
 
 require (
 	github.com/IBM/sarama v1.43.3
-	github.com/aws/aws-sdk-go v1.55.5
+	github.com/aws/aws-sdk-go v1.55.6
 	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/gorilla/handlers v1.5.2
 	github.com/mitchellh/mapstructure v1.5.0
